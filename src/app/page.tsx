@@ -13,6 +13,7 @@ import { AcademicBanner } from "@/components/academic-banner";
 import { ContactSection } from "@/components/contact-section";
 import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
+import ReactLenis from "lenis/react";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -22,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <ReactLenis root>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <main className="min-h-screen bg-white overflow-x-hidden">
         <script
@@ -59,6 +60,6 @@ export default function Home() {
         <ContactSection />
         <Footer />
       </main>
-    </>
+    </ReactLenis>
   );
 }

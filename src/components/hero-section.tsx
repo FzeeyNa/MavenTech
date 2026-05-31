@@ -41,7 +41,7 @@ function PixelParticles() {
         <motion.div
           key={i}
           className="absolute bg-violet-500/10 rounded-sm"
-          style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.s, height: p.s }}
+          style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.s, height: p.s, willChange: "transform, opacity" }}
           animate={{ opacity: [0.1, 0.5, 0.1], scale: [0.8, 1.2, 0.8] }}
           transition={{ duration: 4 + p.d, delay: p.d, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -80,6 +80,7 @@ export function HeroSection() {
             {/* Background glow - pulsing */}
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
+              style={{ willChange: "transform, opacity" }}
               animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -96,6 +97,7 @@ export function HeroSection() {
             {/* Main 3D Rocket with launch animation */}
             <motion.div
               className="relative z-10"
+              style={{ willChange: "transform" }}
               animate={{
                 y: [-8, 8, -8],
                 rotate: [-2, 2, -2],
@@ -109,6 +111,7 @@ export function HeroSection() {
               {/* Rocket glow trail */}
               <motion.div
                 className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-24 sm:h-24 bg-[#FFBA1F]/20 rounded-full blur-2xl"
+                style={{ willChange: "transform, opacity" }}
                 animate={{ opacity: [0.2, 0.5, 0.2], scale: [0.8, 1.2, 0.8] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -125,16 +128,19 @@ export function HeroSection() {
             {/* Floating pixel stars */}
             <motion.div
               className="absolute top-4 sm:top-8 right-4 sm:right-12 w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4 bg-violet-400 rounded-sm"
+              style={{ willChange: "transform, opacity" }}
               animate={{ y: [-5, 5, -5], rotate: [0, 90, 0], opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
               className="absolute bottom-8 sm:bottom-16 left-4 sm:left-12 w-2 sm:w-3 h-2 sm:h-3 bg-[#FFBA1F] rounded-sm"
+              style={{ willChange: "transform, opacity" }}
               animate={{ y: [5, -5, 5], rotate: [0, -90, 0], opacity: [0.4, 0.8, 0.4] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             />
             <motion.div
               className="absolute top-12 sm:top-20 left-8 sm:left-16 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-violet-300 rounded-full"
+              style={{ willChange: "transform, opacity" }}
               animate={{ scale: [0.5, 1.5, 0.5], opacity: [0.3, 0.7, 0.3] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             />
@@ -223,22 +229,6 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
-      </div>
-      {/* Mascot Image */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 flex justify-center pointer-events-none">
-        <motion.div
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <Image
-            src="/images/maskot.png"
-            alt="MAVEN Mascot"
-            width={400}
-            height={400}
-            className="object-contain w-[180px] sm:w-[220px] md:w-[280px] lg:w-[320px] drop-shadow-2xl"
-            priority
-          />
-        </motion.div>
       </div>
 
     </section>
