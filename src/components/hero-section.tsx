@@ -224,6 +224,22 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
+      {/* Mascot Image */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 flex justify-center pointer-events-none">
+        <motion.div
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Image
+            src="/images/maskot.png"
+            alt="MAVEN Mascot"
+            width={400}
+            height={400}
+            className="object-contain w-[180px] sm:w-[220px] md:w-[280px] lg:w-[320px] drop-shadow-2xl"
+            priority
+          />
+        </motion.div>
+      </div>
 
     </section>
   );
