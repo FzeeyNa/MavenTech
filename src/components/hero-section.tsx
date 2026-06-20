@@ -65,7 +65,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-56 sm:pb-64 md:pt-28 md:pb-72 pixel-grid overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-16 sm:pb-20 md:pt-28 md:pb-24 pixel-grid overflow-hidden">
       <PixelParticles />
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
